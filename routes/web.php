@@ -15,4 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/Noticias', 'NocticiaController@index' );
+Route::get('/Noticias', 'NocticiaController@index')->name('noticias.index');
+Route::get('/Noticias/{id}', 'NocticiaController@show')->name('noticias.show');
