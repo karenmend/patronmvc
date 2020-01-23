@@ -17,3 +17,5 @@ Route::get('/', function () {
 
 Route::get('/Noticias', 'NocticiaController@index')->name('noticias.index');
 Route::get('/Noticias/{id}', 'NocticiaController@show')->name('noticias.show');
+
+Route::get('/admin', 'AdminController@dashboard')->name('admin.dashboard');
