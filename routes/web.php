@@ -15,7 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/Noticias', 'NocticiaController@index')->name('noticias.index');
-Route::get('/Noticias/{id}', 'NocticiaController@show')->name('noticias.show');
+Route::get('/', 'NocticiaController@index')->name('noticias.index');
+Route::get('/noticias/{id}', 'NocticiaController@show')->name('noticias.show');
 
 Route::get('/admin', 'AdminController@dashboard')->name('admin.dashboard');
+
+Auth::routes(['register' => false]);
+//login
+//logout
+//register
+
