@@ -15,10 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', 'NocticiaController@index')->name('noticias.index');
-Route::get('/noticias/{id}', 'NocticiaController@show')->name('noticias.show');
+Route::get('/', 'NocticiaController@index')->name('front.noticias.index');
+Route::get('/noticias/{id}', 'NocticiaController@show')->name('front.noticias.show');
 
 Route::get('/admin', 'AdminController@dashboard')->name('admin.dashboard');
+
+//Ruta para establecer las 7 rutas 
+Route::resource('/admin/noticias', 'Admin\NoticiaController');
 
 Auth::routes(['register' => false]);
 //login
