@@ -9,6 +9,10 @@ use App\Noticia;
 
 class NoticiaController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+
+    }
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +21,7 @@ class NoticiaController extends Controller
     public function index()
     {
         $noticias = Noticia::all();
-        $agumentos = arrar();
+        $agumentos = array();
         $argumentos['noticias'] = $noticias;
         return view('admin.noticias.index', $argumentos);
     }
@@ -29,7 +33,7 @@ class NoticiaController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.noticias.create');
     }
 
     /**
@@ -40,7 +44,15 @@ class NoticiaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $noticia = new Noticia();
+        $noticia->titulo = $request->input('txtTitulo');
+        $noticia->cuerpo = $request->input('txtCuerpo');
+        if($noticia->save()) {
+            //Si puede guardar la noticia
+            return redirect()->route('noticias.index')->with('exito','La noticia fue guardada correctamente.');
+        }
+        //Aqui no se pudo guardar
+        return redirect()->route('noticias.index')->with('error','La noticia no pudo agregar la noticia.');
     }
 
     /**
@@ -51,7 +63,7 @@ class NoticiaController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -62,7 +74,10 @@ class NoticiaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $noticia = Noticia::find($id);
+        $argumentos = array();
+        $argumentos['noticia'] = $noticia;
+        return view('admin.noticias.edit', $argumentos);
     }
 
     /**

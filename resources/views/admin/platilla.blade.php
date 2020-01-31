@@ -1,19 +1,26 @@
 @extends('layouts.admin')
 
-@section('titulo', 'Administracion | Título')
-@section('titulo2', 'Texto del título')
+@section('titulo','Administración | Título')
+@section('titulo2','Noticias')
 
 @section('breadcrumbs')
 @endsection
 
 @section('contenido')
 <div class="container-fluid">
-    <div class="col-md-12">
-        <div class="card">
-            <div class="card-header"> 
-            <div>
-            <div class="card-body">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title"> Crear noticias </h3>
                 </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>Titulo</label>
+                        <input type="text" name="txtTitulo" class="form-control"/>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

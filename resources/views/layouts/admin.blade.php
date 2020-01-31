@@ -17,17 +17,17 @@
   <!-- JQVMap -->
   <link rel="stylesheet" href="/plugins/jqvmap/jqvmap.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="/dist/css/adminlte.min.css">
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <link rel="stylesheet" href="/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Daterange picker -->
-  <link rel="stylesheet" href="/pluginns/daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href="/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="/plugins/summernote/summernote-bs4.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  @yield('estilos')
 </head>
-@yield('estilos')
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
@@ -41,19 +41,9 @@
       
     </ul>
 
-    <!-- SEARCH FORM 
-    <form class="form-inline ml-3">
-      <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-          <button class="btn btn-navbar" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>-->
-
+    <!-- SEARCH FORM -->
    
+  
   </nav>
   <!-- /.navbar -->
 
@@ -61,6 +51,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
+  
       <span class="brand-text font-weight-light">Noticias</span>
     </a>
 
@@ -73,20 +64,30 @@
         </div>
         <div class="info">
           <a href="#" class="d-block">{{Auth::user()->name}}</a>
-          <a href="{{route('logout')}}" style="font-size: 12px;" id="linkLogout">Cerrar Sesión</a>
-          <form id="formLogout" action="{{route('logout')}}" method="POST">
+          <a href="{{route('logout')}}" id="linkLogout"
+          style="font-size: 12px;">Cerrar sesión</a>
+          <form id="formLogout" 
+          action="{{route('logout')}}" 
+          method="POST">
           @csrf
           </form>
+          
         </div>
-        
       </div>
 
       <!-- Sidebar Menu -->
-      <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          
+         
+      
+          
+    
+          
           <li class="nav-item has-treeview">
-            <a href="" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
                 Noticias
@@ -106,8 +107,22 @@
                   <p>Nueva noticia</p>
                 </a>
               </li>
+           
             </ul>
           </li>
+          
+         
+         
+         
+          
+         
+          
+          
+        
+         
+       
+        
+        
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -137,9 +152,9 @@
     <!-- /.content-header -->
 
     <!-- Main content -->
-   <section class="content">
-       @yield('contenido')
-   </section>
+    <section class="content">
+        @yield('contenido')
+    </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
@@ -159,51 +174,49 @@
 </div>
 <!-- ./wrapper -->
 
-
-<!-- Bootstrap 4 -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- ChartJS -->
-<script src="plugins/chart.js/Chart.min.js"></script>
-<!-- Sparkline -->
-<script src="plugins/sparklines/sparkline.js"></script>
-<!-- JQVMap -->
-<script src="plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="plugins/jquery-knob/jquery.knob.min.js"></script>
-<!-- daterangepicker -->
-<script src="plugins/moment/moment.min.js"></script>
-<script src="plugins/daterangepicker/daterangepicker.js"></script>
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-<!-- Summernote -->
-<script src="plugins/summernote/summernote-bs4.min.js"></script>
-<!-- overlayScrollbars -->
-<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/js/adminlte.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard.js"></script>
 <!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
+<script src="/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="/plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
+<!-- Bootstrap 4 -->
+<script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- ChartJS -->
+<script src="/plugins/chart.js/Chart.min.js"></script>
+<!-- Sparkline -->
+<script src="/plugins/sparklines/sparkline.js"></script>
+<!-- JQVMap -->
+<script src="/plugins/jqvmap/jquery.vmap.min.js"></script>
+<script src="/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="/plugins/jquery-knob/jquery.knob.min.js"></script>
+<!-- daterangepicker -->
+<script src="/plugins/moment/moment.min.js"></script>
+<script src="/plugins/daterangepicker/daterangepicker.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Summernote -->
+<script src="/plugins/summernote/summernote-bs4.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="/dist/js/adminlte.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
-
+<script src="/dist/js/demo.js"></script>
 <script>
-        function doClickLinkLogout(e){
-          e.preventDefault();
-          $("#formLogout").submit();
-        }
-          $(function() {
-            $('#linkLogout').click(doClickLinkLogout);
-          });
-        </script>
-  @yield('scripts')
+  function doClickLinkLogout(e) {
+    e.preventDefault();
+    $("#formLogout").submit();
+  }
+  $(function() {
+    $("#linkLogout").click(doClickLinkLogout);
+  });
+</script>
+@yield('scripts')
 </body>
 </html>

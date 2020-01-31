@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Noticia extends Model
 {
     protected $table = 'noticias';
-    public $timestamp = false;
+    public $timestamps = false;
 
 }
